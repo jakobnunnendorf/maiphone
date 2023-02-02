@@ -8,7 +8,7 @@ export default function ContactForm(props) {
     const [submitted, toggleSubmitted] = useState(false);
     const styles = {
         component: {
-            width: props.version === "desktop" ? "50%" : "100%",
+            width: props.version === "desktop" ? "50%" : "90%",
             height: "fit-content",
             marginBottom: "15vh",
 

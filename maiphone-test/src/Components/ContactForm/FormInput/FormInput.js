@@ -13,6 +13,7 @@ export default function FormInput(props) {
             fontSize: "50px",
             color: "#33bff0",
             marginBottom: "5vh",
+            marginLeft: "30px",
         },
         form: {
             display: 'grid',

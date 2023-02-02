@@ -2,7 +2,6 @@ import React from 'react';
 import Header from "./Components/Header/Header";
 import Reparaturen from './Components/Reparaturen/Reparaturen';
 import Start from "./Components/Start/Start";
-import Divider from './Components/Divider';
 import Zubehör from './Components/Zubehör/Zubehör';
 import Kontakt from './Components/Kontakt/Kontakt';
 import Impressum from './Components/Impressum/Impressum';
