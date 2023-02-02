@@ -38,7 +38,7 @@ export default function Zubehör(props) {
     }
     return (
         <div style={styles.div}>
-        <article style={styles.article}>
+        <article style={styles.article} id="Zubehör">
             <h3 style={styles.h3}>Handy Zubehör</h3>
                 <p style={styles.p}>Wir bieten Ihnen ein breites Sortiment an Handy Zubehör an.
                 Von <span style={styles.blue}>Displayschutzfolien</span> über <span style={styles.blue}>Handyhüllen </span> 

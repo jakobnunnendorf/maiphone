@@ -33,7 +33,7 @@ export default function Reparaturen(props) {
         }
     }
     return (
-        <div style={styles.component}>
+        <div style={styles.component} id="Reparaturen">
             <h2 style={styles.h2}>Handy kaputt?</h2>
             <InfoSlides version={props.version}/>
             <ContactForm version={props.version}/>

@@ -36,34 +36,21 @@ export default function NavMenu(props) {
             outline: "inherit",
         }
     }
+    function scrollToSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        const sectionRect = section.getBoundingClientRect();
+        const offset = window.innerHeight * 0.12;
+        window.scrollTo({
+            top: window.pageYOffset + sectionRect.top - offset,
+            behavior: "smooth"
+        });
+    }
     function handleClick(input){ // 1) Sets site active & 2) scrolls to component
 
         props.setActive(input);
         /* 1) calls the setActive function that was passed from App.js
         and thereby changes the App.js state variable activeSite to the input string*/
-
-        let scroll_position; // empty container for scrollposition
-        switch (input){ // based on string, decides which y-coordinate to set as target
-            case "Start":
-                scroll_position = 0;
-            break;
-            case "Reparaturen":
-                scroll_position = window.innerHeight * props.layout.start / 100;
-            break;
-            case "Zubehör":
-                scroll_position = window.innerHeight * (props.layout.start + props.layout.reparaturen) / 100;
-            break;
-            case "Kontakt":
-                scroll_position = window.innerHeight * (props.layout.start + props.layout.reparaturen + props.layout.zubehör) / 100;
-            break;
-            default:
-                scroll_position = 0;
-            break;
-        }
-        window.scrollTo({ //scrolls to correct position
-            top: scroll_position,
-            behavior: "smooth"
-        });
+        scrollToSection(input);
     }
     const navList = props.siteControl.sites.map(
         site => {

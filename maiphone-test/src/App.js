@@ -97,7 +97,6 @@ class App extends React.Component{
         layout={this.state.layout}
         version={this.state.version}
       />
-      {this.state.version === "desktop" && <Divider upperColor="white" lowerColor="black" height="10vh" border="false"/>}
       <Reparaturen layout={this.state.layout} version={this.state.version}/>
       <Zubehör height={this.state.layout.zubehör}/>
       <Kontakt height={this.state.layout.kontakt} version={this.state.version}/>

@@ -50,7 +50,7 @@ export default function Kontakt(props) {
         },
     }
     return (
-        <div style={styles.div}>
+        <div style={styles.div} id="Kontakt">
             <h3 style={styles.h3}>Kontakt</h3>
             <div style={styles.wrapper}>
                 <img src={visite} alt="" style={styles.visite}/>

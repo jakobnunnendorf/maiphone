@@ -12,7 +12,7 @@ export default function Start(props) {
         }
     }
     return (
-        <section style={styles.component}>
+        <section style={styles.component} id="Start">
 
         <Background version={props.version}/>
 
