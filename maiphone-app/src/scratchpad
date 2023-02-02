@@ -1,0 +1,120 @@
+<main style={{
+          position: "relative",
+          top: `${this.state.styles.layout.header.height}vh`}}> {/*Pushes main section down to prevent overlap with navbar*/}
+        <Start layout={this.state.layout}/>
+        <Reparaturen layout={this.state.layout}/>
+          <Zubehör layout={this.state.layout}/>
+          <Kontakt layout={this.state.layout}/>
+      </main>
+      <footer style={{
+          position: "relative",
+          top: `${this.state.styles.layout.header.height}vh`}}>
+
+      </footer>
+
+      <NavBar
+          siteControl={this.state.siteControl}
+          setActive={this.setActive}
+          layout={this.state.layout}/> {/*Passes the info for page height so that the navbar can scroll to relevant component*/}
+
+          <li style={props.siteControl.activeSite === site ? styles.white : null} onClick={() => handleClick(site)}><button style={styles.btn}>{site}</button></li>
+
+
+          export default function NavBar(props) {
+    const styles = {
+        nav: {
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            height: "13vh",
+            width: "100vw",
+    
+            position: "fixed",
+    
+            backgroundColor: "black",
+            color: "#33bff0",
+            zIndex: 1000
+            },
+        ul: {
+            display: 'flex',
+            justifyContent: 'space-around',
+            alignItems: 'center',
+            width: "50vw",
+    
+            marginRight: "1vw",
+    
+            listStyle: "none",
+            fontWeight: "bold",
+            fontFamily: "Lato"
+        },
+        btn: {
+            background: "none",
+            color: "inherit",
+            border: "none",
+            padding: 0,
+            font: "inherit",
+            cursor: "pointer",
+            outline: "inherit"
+        },
+        branding: {
+            display: "flex",
+            justifyContent: "left",
+            alignItems: "center",
+            height: "90%",
+            width: "30%",
+            marginLeft: "3vw",
+            fontFamily: "Lato",
+        },
+        h1: {
+            marginLeft: "1vw",
+    
+            textAlign: "center",
+            lineHeight: 1.5
+        },
+        white: {
+            color: "white"
+        },
+        em: {fontSize: "1em"}
+    }
+    function handleClick(input){
+        props.setActive(input);
+        let scroll_position;
+        switch (input){
+            case "Start":
+                scroll_position = 0;
+            break;
+            case "Reparaturen":
+                scroll_position = window.innerHeight * props.layout.start / 100;
+            break;
+            case "Zubehör":
+                scroll_position = window.innerHeight * (props.layout.start + props.layout.reparaturen) / 100;
+            break;
+            case "Kontakt":
+                scroll_position = window.innerHeight * (props.layout.start + props.layout.reparaturen + props.layout.zubehör) / 100;
+            break;
+            default:
+                scroll_position = 0;
+            break;
+        }
+        window.scrollTo({
+            top: scroll_position,
+            behavior: "smooth"
+        });
+    }
+    const navList = props.siteControl.sites.map(
+        site => <li>site</li>
+        );
+    return (
+        <>
+        <nav style={styles.nav}>
+            <div style={styles.branding}>
+                <img src={logo} alt="" className='rmbg'/>
+                <h1 style={styles.h1}>Mai-Phone</h1>
+            </div>
+            <ul style={styles.ul}>
+                {navList}
+            </ul>
+        </nav>
+        </>
+    )
+}

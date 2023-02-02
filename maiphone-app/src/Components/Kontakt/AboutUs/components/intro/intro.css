@@ -1,0 +1,43 @@
+.intro-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgb(255, 166, 0);
+  color: black;
+  height: 15vh;
+  padding: 20px;
+}
+
+.intro-h2 {
+  margin: 0;
+  transform: translate(0,100%);
+}
+
+.intro-p {
+  max-width: 85vw;
+  margin-bottom: 50%;
+  transform: translate(0,100%);
+}
+
+@media screen and (min-width: 699px) {
+  .intro-container {
+    justify-content: start;
+    align-items: flex-start;
+    text-align: left;
+    padding: 10%;
+    height: 60vh;
+  }
+
+  .intro-h2 {
+    margin: 0;
+    transform: translate(0,0);
+  }
+
+  .intro-p {
+    max-width: 450px;
+    margin-bottom: 0;
+    transform: translate(0,0);
+  }
+}

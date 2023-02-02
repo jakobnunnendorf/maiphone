@@ -1,0 +1,9 @@
+.mark{
+    height: 5vh;
+}
+.offset{
+    height: 100%;
+    width: 100%;
+    transform: translate(0,50%);
+    font-size: 12px;
+}
